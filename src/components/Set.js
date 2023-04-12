@@ -1,9 +1,9 @@
-import "../styles/Puntos.css";
+import "../styles/Set.css";
 
 const Set = (props) => {
     return (
     <div className="puntos-tenis">
-            {props.valor}
+            {props.sets}
         </div>
     );
 }
