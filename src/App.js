@@ -14,11 +14,13 @@ function App() {
   const [setA, seSetA] = useState(0);
   const [setB, seSetB] = useState(0);
 
+
   const onClickHandlerA = (event) => { 
       if (puntosA >= 30) {
         setPuntosA(puntosA + 10);
         if (puntosA >= 40 && (puntosB < 40)) {
           seSetA(setA + 1);
+          alert("Gana el jugador A");
           setPuntosA(0);
           setPuntosB(0);
         }
@@ -26,6 +28,7 @@ function App() {
           setPuntosA(0);
           setPuntosB(0);
           seSetA(setA + 1);
+          alert("Gana el jugador A");
         }
       } else {
         setPuntosA(puntosA + 15);
@@ -39,11 +42,13 @@ function App() {
           seSetB(setB + 1);
           setPuntosA(0);
           setPuntosB(0);
+          alert("Gana el jugador B");
         }
         if (puntosB >= 40 && (puntosB - puntosA === 10)) {
           seSetB(setB + 1);
           setPuntosA(0);
           setPuntosB(0);
+          alert("Gana el jugador B");
         }
       } else {
         setPuntosB(puntosB + 15);
@@ -70,8 +75,12 @@ function App() {
       {/*<Boton texto="Punto de B" onClick={null}/>*/}
       {/*<Boton texto="Reiniciar" onClick={null}/>*/}
       <Boton texto="Reiniciar" onClick={onClickHandlerC}/>
+      <div className="container">
       <Set sets={setA} />
+      <Titulo texto="Set Player A" />
       <Set sets={setB} />
+      <Titulo texto="Set Player B" />
+      </div>
     </div>
   );
 }
